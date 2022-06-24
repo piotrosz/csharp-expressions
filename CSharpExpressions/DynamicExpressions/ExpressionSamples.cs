@@ -21,26 +21,10 @@ namespace DynamicExpressions
         {
             var expenses = new List<Expense>
             {
-                new()
-                {
-                    CategoryName = "entertainment",
-                    Amount = 34
-                },
-                new()
-                {
-                    CategoryName = "entertainment",
-                    Amount = 1
-                },
-                new()
-                {
-                    CategoryName = "bills",
-                    Amount = 232
-                },
-                new()
-                {
-                    CategoryName = "car",
-                    Amount = 9090
-                }
+                new("entertainment", 34),
+                new("entertainment", 1),
+                new("bills", 232),
+                new("car", 9090)
             };
 
             var categoryConstant = Expression.Constant(categoryName);
@@ -61,10 +45,5 @@ namespace DynamicExpressions
         }
     }
 
-    public sealed class Expense
-    {
-        public string CategoryName { get; set; }
-
-        public decimal Amount { get; set; }
-    }
+    public readonly record struct Expense(string CategoryName, decimal Amount);
 }

@@ -13,7 +13,7 @@ namespace DynamicExpressions.Tests
         [Fact]
         public void DynamicFilter()
         {
-            var result = ExpressionSamples.DynamicFilterByCategoryNameAndAmount("entertainment", 2);
+            var result = ExpressionSamples.DynamicFilterByCategoryNameAndAmount("entertainment", 3);
 
             result.Single().Amount.Should().Be(34);
         }
