@@ -27,9 +27,9 @@ namespace DynamicExpressions
                 new("car", 9090)
             };
 
-            var categoryConstant = Expression.Constant(categoryName);
-
             var expenseParameter = Expression.Parameter(typeof(Expense));
+
+            var categoryConstant = Expression.Constant(categoryName);
             var categoryNameProperty = Expression.Property(expenseParameter, nameof(Expense.CategoryName));
             var categoryEquals = Expression.Equal(categoryNameProperty, categoryConstant);
             
