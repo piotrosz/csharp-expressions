@@ -2,7 +2,7 @@
 
 public static class PicturesDatabaseStub
 {
-    private static readonly IEnumerable<Picture> PictureSet = new List<Picture>()
+    private static readonly IEnumerable<Picture> PictureSet = new List<Picture>
     {
         new()
         {
@@ -15,7 +15,7 @@ public static class PicturesDatabaseStub
         {
             DateCreated = new DateOnly(2021, 6, 13),
             Title = "Portrait",
-            Tags = new List<string> { "portait", "ink"}
+            Tags = new List<string> { "portrait", "ink"}
         },
         new()
         {

@@ -1,21 +1,20 @@
 using FluentAssertions;
 using SpecificationPattern.PictureSpecifications;
 
-namespace SpecificationPattern.Tests
+namespace SpecificationPattern.Tests;
+
+public class PictureRepositoryTests
 {
-    public class PictureRepositoryTests
+    [Fact]
+    public void Test1()
     {
-        [Fact]
-        public void Test1()
-        {
-            var sut = new PictureRepository();
+        var sut = new PictureRepository();
 
-            var specification = new CreatedLaterOrEqualThanYearSpecification(2020)
-                .And(new HasTagSpecification("abstract"));
+        var specification = new CreatedLaterOrEqualThanYearSpecification(2020)
+            .And(new HasTagSpecification("abstract"));
 
-            var result = sut.GetPictures(specification);
+        var result = sut.GetPictures(specification);
 
-            result.Single().Title.Should().Be("Sernik");
-        }
+        result.Single().Title.Should().Be("Sernik");
     }
 }

@@ -1,12 +1,11 @@
 ﻿using SpecificationPattern.Lib;
 
-namespace SpecificationPattern
+namespace SpecificationPattern;
+
+public sealed class PictureRepository
 {
-    public sealed class PictureRepository
+    public IEnumerable<Picture> GetPictures(Specification<Picture> specification)
     {
-        public IEnumerable<Picture> GetPictures(Specification<Picture> specification)
-        {
-            return PicturesDatabaseStub.Pictures.Where(specification.ToExpression());
-        }
+        return PicturesDatabaseStub.Pictures.Where(specification.ToExpression());
     }
 }
